@@ -27,6 +27,7 @@ namespace NNP_Bot.Commands
             var embed = new EmbedBuilder();
             await ReplyAsync($"{Context.User.Mention} 하.... 귀찮아 니가좀 알아보지.. 얩다..");
             embed.WithAuthor(user);
+            embed.WithTitle($"소속 서버:: :arrow_forward:{Context.Guild}:arrow_backward:");
             embed.AddField("닉네임",$"{user.Username}#{user.Discriminator}", false);
             if (user.Status == UserStatus.Online) embed.AddField("현재상태", $"온라인 :white_check_mark:");
             else if (user.Status == UserStatus.Offline) embed.AddField("현재상태", $"오프라인 :x:");

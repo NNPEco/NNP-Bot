@@ -1,6 +1,7 @@
 ﻿using Discord;
 using Discord.Audio;
 using Discord.Commands;
+using Discord.WebSocket;
 using NNP_Bot.Services;
 using System;
 using System.Collections.Generic;
@@ -9,14 +10,14 @@ using System.Threading.Tasks;
 
 namespace NNP_Bot.Commands
 {
-
     public class CmdMusic : ModuleBase<SocketCommandContext>
     {
-        
+        public Dictionary<string, AudioService> slist = new Dictionary<string, AudioService>();
         public struct MusicList
         {
             public string MusicName;
             public string Path;
+            public SocketGuildUser adduser;
         };
 
         private readonly AudioService _service;
@@ -31,9 +32,10 @@ namespace NNP_Bot.Commands
         {
             if ((Context.User as IVoiceState).VoiceChannel == null)
             {
-                await ReplyAsync($"{Context.User.Mention} 씨발뭐뭐뭐뭐무머멈머ㅓ 왜부름??? ㅅㅂ ㅈㄴ부르네 여긴또 뭔채널이야;; {(Context.User as IVoiceState).VoiceChannel.Name}?? 이딴곳에 부르지마라;; ㅈㄴ 귀찮네");
+                await _service.JoinAudio(Context.Guild, (Context.User as IVoiceState).VoiceChannel);
             }
-            
+            await _service.SendAudioAsync(Context.Guild,Context.Message.Channel,"aa");
+            await ReplyAsync($"판사님!!!! 비트주세요!!!!!!!!!!");
         }
         [Command("스킵")]
         public async Task SkipAsync()
