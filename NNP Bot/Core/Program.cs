@@ -11,6 +11,7 @@ namespace NNP_Bot
 {
     class Program
     {
+        
         private static void Main(string[] args) => new StartupBot().RunBotAsync().GetAwaiter().GetResult();
     }
 }

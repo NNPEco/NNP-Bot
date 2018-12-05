@@ -25,8 +25,11 @@ namespace NNP_Bot.Commands
                 userroles += role.Name + "\n";
             }
             var embed = new EmbedBuilder();
+            await ReplyAsync($"{Context.User.Mention} 하.... 귀찮아 니가좀 알아보지.. 얩다..");
             embed.WithAuthor(user);
             embed.AddField("닉네임",$"{user.Username}#{user.Discriminator}", false);
+            if (user.Status == UserStatus.Online) embed.AddField("현재상태", $"온라인 :white_check_mark:");
+            else if (user.Status == UserStatus.Offline) embed.AddField("현재상태", $"오프라인 :x:");
             embed.AddField("소속그룹",$"{userroles}", false);
             embed.AddField("서버참여", $"{user.JoinedAt}");
             embed.WithColor(Color.Blue); 
