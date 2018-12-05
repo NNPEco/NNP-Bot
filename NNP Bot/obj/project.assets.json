@@ -16,6 +16,20 @@
           "lib/netstandard1.4/EmbedOnFly.dll": {}
         }
       },
+      "Discord.Addons.Interactive/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Discord.Net.Commands": "1.0.1",
+          "Discord.Net.WebSocket": "1.0.1",
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.1/Discord.Addons.Interactive.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Discord.Addons.Interactive.dll": {}
+        }
+      },
       "Discord.Net/1.0.2": {
         "type": "package",
         "dependencies": {
@@ -54,15 +68,6 @@
         },
         "runtime": {
           "lib/netstandard1.3/Discord.Net.Core.dll": {}
-        }
-      },
-      "Discord.Net.Providers.WS4Net/1.0.2": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Discord.Net.Providers.WS4Net.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Discord.Net.Providers.WS4Net.dll": {}
         }
       },
       "Discord.Net.Rest/1.0.2": {
@@ -121,6 +126,59 @@
         },
         "runtime": {
           "lib/netstandard1.3/Discord.Net.WebSocket.dll": {}
+        }
+      },
+      "Google.Apis/1.36.1": {
+        "type": "package",
+        "dependencies": {
+          "Google.Apis.Core": "1.36.1",
+          "Newtonsoft.Json": "10.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Apis.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.dll": {}
+        }
+      },
+      "Google.Apis.Auth/1.36.1": {
+        "type": "package",
+        "dependencies": {
+          "Google.Apis": "1.36.1",
+          "Google.Apis.Core": "1.36.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll": {},
+          "lib/netstandard2.0/Google.Apis.Auth.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll": {},
+          "lib/netstandard2.0/Google.Apis.Auth.dll": {}
+        }
+      },
+      "Google.Apis.Core/1.36.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Apis.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Core.dll": {}
+        }
+      },
+      "Google.Apis.YouTube.v3/1.36.1.1226": {
+        "type": "package",
+        "dependencies": {
+          "Google.Apis": "1.36.1",
+          "Google.Apis.Auth": "1.36.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Apis.YouTube.v3.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.YouTube.v3.dll": {}
         }
       },
       "Microsoft.CSharp/4.3.0": {
@@ -1797,6 +1855,16 @@
         "lib/netstandard1.4/EmbedOnFly.dll"
       ]
     },
+    "Discord.Addons.Interactive/1.0.1": {
+      "sha512": "jpLtwySgRtkng2DVu8Q0ZKQjCUW9WpxEJ62eqwO1LYmnqrnhFl0mbRz7HlJCJiWay4FsS3vap3pixW+sXE4Y+Q==",
+      "type": "package",
+      "path": "discord.addons.interactive/1.0.1",
+      "files": [
+        "discord.addons.interactive.1.0.1.nupkg.sha512",
+        "discord.addons.interactive.nuspec",
+        "lib/netstandard1.1/Discord.Addons.Interactive.dll"
+      ]
+    },
     "Discord.Net/1.0.2": {
       "sha512": "c2TarNLeH7uccUC6VfI+uztykZl8y8ThFhZ027xLW1gG9JXhvYt8XjAM5p3FtRV1QqnsJadpSM2ysK+VRubY2Q==",
       "type": "package",
@@ -1833,18 +1901,6 @@
         "lib/netstandard1.1/Discord.Net.Core.xml",
         "lib/netstandard1.3/Discord.Net.Core.dll",
         "lib/netstandard1.3/Discord.Net.Core.xml"
-      ]
-    },
-    "Discord.Net.Providers.WS4Net/1.0.2": {
-      "sha512": "4uiF+g48tnI8IRBiQWH2dGjY2mnIVXNbgExMcnjLGdzzGwm/luL0QrBXQQA4r25cAySgEgvXQT64qfNECpljXg==",
-      "type": "package",
-      "path": "discord.net.providers.ws4net/1.0.2",
-      "files": [
-        ".signature.p7s",
-        "discord.net.providers.ws4net.1.0.2.nupkg.sha512",
-        "discord.net.providers.ws4net.nuspec",
-        "lib/net45/Discord.Net.Providers.WS4Net.dll",
-        "lib/net45/Discord.Net.Providers.WS4Net.xml"
       ]
     },
     "Discord.Net.Rest/1.0.2": {
@@ -1907,8 +1963,94 @@
         "lib/netstandard1.3/Discord.Net.WebSocket.xml"
       ]
     },
+    "Google.Apis/1.36.1": {
+      "sha512": "NBfotn7kOSd1biulilvCu3CIWr5kI4gXBNGGZyvOgE+ilR06zTPY9kPSVblYUoYPsXFvouZOS8GYPhnpnAK/Zw==",
+      "type": "package",
+      "path": "google.apis/1.36.1",
+      "files": [
+        ".signature.p7s",
+        "google.apis.1.36.1.nupkg.sha512",
+        "google.apis.nuspec",
+        "lib/net45/Google.Apis.PlatformServices.dll",
+        "lib/net45/Google.Apis.dll",
+        "lib/net45/Google.Apis.pdb",
+        "lib/net45/Google.Apis.xml",
+        "lib/netstandard1.3/Google.Apis.dll",
+        "lib/netstandard1.3/Google.Apis.pdb",
+        "lib/netstandard1.3/Google.Apis.xml",
+        "lib/netstandard2.0/Google.Apis.dll",
+        "lib/netstandard2.0/Google.Apis.pdb",
+        "lib/netstandard2.0/Google.Apis.xml"
+      ]
+    },
+    "Google.Apis.Auth/1.36.1": {
+      "sha512": "ECo2d+X7gDaa3iBHUTMgW1XZZa9MnjZ3ehAY4oAwpmypcQmvRNchvsuKRxqXq4fwCyGO6gS6iEi6hi6pPxwc0A==",
+      "type": "package",
+      "path": "google.apis.auth/1.36.1",
+      "files": [
+        ".signature.p7s",
+        "google.apis.auth.1.36.1.nupkg.sha512",
+        "google.apis.auth.nuspec",
+        "lib/net45/Google.Apis.Auth.PlatformServices.dll",
+        "lib/net45/Google.Apis.Auth.dll",
+        "lib/net45/Google.Apis.Auth.pdb",
+        "lib/net45/Google.Apis.Auth.xml",
+        "lib/netstandard1.3/Google.Apis.Auth.PlatformServices.dll",
+        "lib/netstandard1.3/Google.Apis.Auth.dll",
+        "lib/netstandard1.3/Google.Apis.Auth.pdb",
+        "lib/netstandard1.3/Google.Apis.Auth.xml",
+        "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll",
+        "lib/netstandard2.0/Google.Apis.Auth.dll",
+        "lib/netstandard2.0/Google.Apis.Auth.pdb",
+        "lib/netstandard2.0/Google.Apis.Auth.xml"
+      ]
+    },
+    "Google.Apis.Core/1.36.1": {
+      "sha512": "UVcewN+O3kQ0bJ+pSH10RLc2vMNmgBGetXGY9HQms3W0PXWqiIh2PioVggwrfLmL/6wYBJA9N3l+vA/C2yS0kw==",
+      "type": "package",
+      "path": "google.apis.core/1.36.1",
+      "files": [
+        ".signature.p7s",
+        "google.apis.core.1.36.1.nupkg.sha512",
+        "google.apis.core.nuspec",
+        "lib/net45/Google.Apis.Core.dll",
+        "lib/net45/Google.Apis.Core.pdb",
+        "lib/net45/Google.Apis.Core.xml",
+        "lib/netstandard1.3/Google.Apis.Core.dll",
+        "lib/netstandard1.3/Google.Apis.Core.pdb",
+        "lib/netstandard1.3/Google.Apis.Core.xml",
+        "lib/netstandard2.0/Google.Apis.Core.dll",
+        "lib/netstandard2.0/Google.Apis.Core.pdb",
+        "lib/netstandard2.0/Google.Apis.Core.xml"
+      ]
+    },
+    "Google.Apis.YouTube.v3/1.36.1.1226": {
+      "sha512": "kVlNyMg+mUhypNKr9a1PQoOQkHC1UYkVRhhArQwSzZecl7Zb1FjBsq8VmXX/ESQDSnfg16eD7EY8Ab5QGKexhA==",
+      "type": "package",
+      "path": "google.apis.youtube.v3/1.36.1.1226",
+      "files": [
+        ".signature.p7s",
+        "google.apis.youtube.v3.1.36.1.1226.nupkg.sha512",
+        "google.apis.youtube.v3.nuspec",
+        "lib/net40/Google.Apis.YouTube.v3.dll",
+        "lib/net40/Google.Apis.YouTube.v3.pdb",
+        "lib/net40/Google.Apis.YouTube.v3.xml",
+        "lib/net45/Google.Apis.YouTube.v3.dll",
+        "lib/net45/Google.Apis.YouTube.v3.pdb",
+        "lib/net45/Google.Apis.YouTube.v3.xml",
+        "lib/netstandard1.0/Google.Apis.YouTube.v3.dll",
+        "lib/netstandard1.0/Google.Apis.YouTube.v3.pdb",
+        "lib/netstandard1.0/Google.Apis.YouTube.v3.xml",
+        "lib/netstandard1.3/Google.Apis.YouTube.v3.dll",
+        "lib/netstandard1.3/Google.Apis.YouTube.v3.pdb",
+        "lib/netstandard1.3/Google.Apis.YouTube.v3.xml",
+        "lib/netstandard2.0/Google.Apis.YouTube.v3.dll",
+        "lib/netstandard2.0/Google.Apis.YouTube.v3.pdb",
+        "lib/netstandard2.0/Google.Apis.YouTube.v3.xml"
+      ]
+    },
     "Microsoft.CSharp/4.3.0": {
-      "sha512": "P+MBhIM0YX+JqROuf7i306ZLJEjQYA9uUyRDE+OqwUI5sh41e2ZbPQV3LfAPh+29cmceE1pUffXsGfR4eMY3KA==",
+      "sha512": "xCHuMivZf0pcPV2GGIimldd0GeR/QwaVpEgjOHEdjv88DVsdYd0J+j6S/y1sZbPdOBIxzOOnZz/3F9EEjO7f/g==",
       "type": "package",
       "path": "microsoft.csharp/4.3.0",
       "files": [
@@ -2517,7 +2659,7 @@
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "HdSSp5MnJSsg08KMfZThpuLPJpPwE5hBXvHwoKWosyHHfe8Mh5WKT0ylEOf6yNzX6Ngjxe4Whkafh5q7Ymac4Q==",
+      "sha512": "wl+i5n67Dy2xtK8JJsZNMD2krVPwX/6+ODZTwoA2ggCVyMlWFC5V8p67Gu/qkz3SeLRFhPlhb/Um9lob3KaDUA==",
       "type": "package",
       "path": "runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
@@ -2529,7 +2671,7 @@
       ]
     },
     "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "+yH1a49wJMy8Zt4yx5RhJrxO/DBDByAiCzNwiETI+1S4mPdCu0OY4djdciC7Vssk0l22wQaDLrXxXkp+3+7bVA==",
+      "sha512": "sxnVLgMmOrTEwleLy8V1l3yv86aBQAf7ADDzrNCJj+Wmu6ol5X7wMjg+fqMHp9blezqdmvE9Qi1Eaef7at7Bbw==",
       "type": "package",
       "path": "runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
@@ -2541,7 +2683,7 @@
       ]
     },
     "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "c3YNH1GQJbfIPJeCnr4avseugSqPrxwIqzthYyZDN6EuOyNOzq+y2KSUfRcXauya1sF4foESTgwM5e1A8arAKw==",
+      "sha512": "sa0tvZ1YZUKXg+lg2K8xl5gwZIjYn96E7oJ1fH/s8fjRWrg0fJAt2+UowOWqk02qRxhX3s9q4i9kZHdIThwzOw==",
       "type": "package",
       "path": "runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
@@ -2553,7 +2695,7 @@
       ]
     },
     "runtime.native.System/4.3.0": {
-      "sha512": "c/qWt2LieNZIj1jGnVNsE2Kl23Ya2aSTBuXMD6V7k9KWr6l16Tqdwq+hJScEpWER9753NWC8h96PaVNY5Ld7Jw==",
+      "sha512": "3X9j6ixoq+JVYgN0e9p3n7vnqwt1YEQMl2FHb5haDfVOaGKGUtZo4ZxdWTUrHXig+U5e5IAuBgicwIOBoip4mA==",
       "type": "package",
       "path": "runtime.native.system/4.3.0",
       "files": [
@@ -2565,7 +2707,7 @@
       ]
     },
     "runtime.native.System.Net.Http/4.3.0": {
-      "sha512": "ZVuZJqnnegJhd2k/PtAbbIcZ3aZeITq3sj06oKfMBSfphW3HDmk/t4ObvbOk/JA/swGR0LNqMksAh/f7gpTROg==",
+      "sha512": "g5UMdavlIEZUiItsPvGMFM5iI9are8RQSB7o1dG4H97kqroI7g2BM9+BtPeWRnF00jWEJ+PLXgDDHceHfXVvDA==",
       "type": "package",
       "path": "runtime.native.system.net.http/4.3.0",
       "files": [
@@ -2577,7 +2719,7 @@
       ]
     },
     "runtime.native.System.Net.Security/4.3.0": {
-      "sha512": "M2nN92ePS8BgQ2oi6Jj3PlTUzadYSIWLdZrHY1n1ZcW9o4wAQQ6W+aQ2lfq1ysZQfVCgDwY58alUdowrzezztg==",
+      "sha512": "9/AWPocrRu7ncZCcNEfCkYbH+WC3IDb3D4BFaRf1S/HQrO1+di6y/2WjqY8JHYyGxB06gwVnLOcv5FNxVt3f0Q==",
       "type": "package",
       "path": "runtime.native.system.net.security/4.3.0",
       "files": [
@@ -2589,7 +2731,7 @@
       ]
     },
     "runtime.native.System.Security.Cryptography.Apple/4.3.0": {
-      "sha512": "DloMk88juo0OuOWr56QG7MNchmafTLYWvABy36izkrLI5VledI0rq28KGs1i9wbpeT9NPQrx/wTf8U2vazqQ3Q==",
+      "sha512": "B7f7rGDB23oICgZ7CycL9iidP01WKfzec9P3hFxGWqyrg/8BRNB44K1tULmfzbPMrCi70bTaXKJZSNZEeTCmDw==",
       "type": "package",
       "path": "runtime.native.system.security.cryptography.apple/4.3.0",
       "files": [
@@ -2601,7 +2743,7 @@
       ]
     },
     "runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "NS1U+700m4KFRHR5o4vo9DSlTmlCKu/u7dtE5sUHVIPB+xpXxYQvgBgA6wEIeCz6Yfn0Z52/72WYsToCEPJnrw==",
+      "sha512": "RzqoP2JMOqrpru8Pk5n6t0WmyCp9ymy5IGAUnXHQZR/NQpTPhmQUOOrtmiEuvEPiWbKVZyHjQkR74wMqq9x12A==",
       "type": "package",
       "path": "runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
@@ -2613,7 +2755,7 @@
       ]
     },
     "runtime.opensuse.13.2-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "b3pthNgxxFcD+Pc0WSEoC0+md3MyhRS6aCEeenvNE3Fdw1HyJ18ZhRFVJJzIeR/O/jpxPboB805Ho0T3Ul7w8A==",
+      "sha512": "12vsVZcTEROvbdfhwFl0AGDnte1ORhVEm0i4j7WvqBoWw6vg6dvZoe9pXVuW/fYrhNc3/1w08szSX2e5wYtJaA==",
       "type": "package",
       "path": "runtime.opensuse.13.2-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
@@ -2625,7 +2767,7 @@
       ]
     },
     "runtime.opensuse.42.1-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "KeLz4HClKf+nFS7p/6Fi/CqyLXh81FpiGzcmuS8DGi9lUqSnZ6Es23/gv2O+1XVGfrbNmviF7CckBpavkBoIFQ==",
+      "sha512": "tESuIBRgbbCAXnTqHgXRks6s4sh1A8/H7Uz/bPeehIxbT+9IRhLrPLwre+Yv9Uoc++pyGDbhFjxpEK7PM5irUQ==",
       "type": "package",
       "path": "runtime.opensuse.42.1-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
@@ -2637,7 +2779,7 @@
       ]
     },
     "runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.Apple/4.3.0": {
-      "sha512": "kVXCuMTrTlxq4XOOMAysuNwsXWpYeboGddNGpIgNSZmv1b6r/s/DPk0fYMB7Q5Qo4bY68o48jt4T4y5BVecbCQ==",
+      "sha512": "VuQQZK+IUAvv/NjgTgVQ7IjxJ7BhBuK9NXSBqsZ3n3xL1nUODlV3POCX0UpoTk3g6VNi0MIap+KRI5SLhbEHiA==",
       "type": "package",
       "path": "runtime.osx.10.10-x64.runtime.native.system.security.cryptography.apple/4.3.0",
       "files": [
@@ -2649,7 +2791,7 @@
       ]
     },
     "runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "X7IdhILzr4ROXd8mI1BUCQMSHSQwelUlBjF1JyTKCjXaOGn2fB4EKBxQbCK2VjO3WaWIdlXZL3W6TiIVnrhX4g==",
+      "sha512": "J97lzWNRggXQJ9UDJY6KVJyLSFQTcIMh1RDqmCEvsJaUHpPX3KH9nu87KIEVoWanSh58w7ziovktrAzQHGNing==",
       "type": "package",
       "path": "runtime.osx.10.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
@@ -2661,7 +2803,7 @@
       ]
     },
     "runtime.rhel.7-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "nyFNiCk/r+VOiIqreLix8yN+q3Wga9+SE8BCgkf+2BwEKiNx6DyvFjCgkfV743/grxv8jHJ8gUK4XEQw7yzRYg==",
+      "sha512": "+luapYGaFOPyXTbArUWEa+mpgynPlsCjJMPhuavm/fMXURCqjpdiwmWdma+2z2CX1HSGibwlwnOjbnLymM2Gew==",
       "type": "package",
       "path": "runtime.rhel.7-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
@@ -2673,7 +2815,7 @@
       ]
     },
     "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "ytoewC6wGorL7KoCAvRfsgoJPJbNq+64k2SqW6JcOAebWsFUvCCYgfzQMrnpvPiEl4OrblUlhF2ji+Q1+SVLrQ==",
+      "sha512": "rBj5Jc9kVfzmXEEOAn4iQsIIIMGhlm1puSfC3Vi2x9rw69rqfXJWVdaOBUmha9NX+9eyS5tzjc82kdx9kDmsYQ==",
       "type": "package",
       "path": "runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
@@ -2685,7 +2827,7 @@
       ]
     },
     "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "I8bKw2I8k58Wx7fMKQJn2R8lamboCAiHfHeV/pS65ScKWMMI0+wJkLYlEKvgW1D/XvSl/221clBoR2q9QNNM7A==",
+      "sha512": "qbj0NDo1MG9Pr9uAH0BDUQdTuyaY0RFVVyIQK5KiDQhyDZZu2lqRB9SmLlJTJ+Ho0S0pIwuqs1grY/ij0DNBkw==",
       "type": "package",
       "path": "runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
@@ -2697,7 +2839,7 @@
       ]
     },
     "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "VB5cn/7OzUfzdnC8tqAIMQciVLiq2epm2NrAm1E9OjNRyG4lVhfR61SMcLizejzQP8R8Uf/0l5qOIbUEi+RdEg==",
+      "sha512": "PSWwV0MZk2JykHVzcN9U5pOpabI2u83GBrdqP+cnjdeVFclQ0s//zAjhBkV5jdrrBeMNChKCJhnK2apqP7UtfA==",
       "type": "package",
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
@@ -3255,7 +3397,7 @@
       ]
     },
     "System.Dynamic.Runtime/4.3.0": {
-      "sha512": "SNVi1E/vfWUAs/WYKhE9+qlS6KqK0YVhnlT0HQtr8pMIA8YX3lwy3uPMownDwdYISBdmAF/2holEIldVp85Wag==",
+      "sha512": "PP5QbkR4XqoGTICToyrOvSRubObKmEz8htuWICLVPe+wn8lKhXexqq3jIjC8jOEe9WhVEC3DRrO26LQXLpY37A==",
       "type": "package",
       "path": "system.dynamic.runtime/4.3.0",
       "files": [
@@ -3428,7 +3570,7 @@
       ]
     },
     "System.Globalization.Extensions/4.3.0": {
-      "sha512": "FhKmdR6MPG+pxow6wGtNAWdZh7noIOpdD5TwQ3CprzgIE1bBBoim0vbR1+AWsWjQmU7zXHgQo4TWSP6lCeiWcQ==",
+      "sha512": "EISq3MoWF9HT60Noh+sq5tzv9QJrUIMKGohvjGZoU8AwyUOcFpRGcJWgsXFqSbyT1lDSe5MNOLSE0GyQrJ72kA==",
       "type": "package",
       "path": "system.globalization.extensions/4.3.0",
       "files": [
@@ -3835,7 +3977,7 @@
       ]
     },
     "System.Net.NameResolution/4.3.0": {
-      "sha512": "AFYl08R7MrsrEjqpQWTZWBadqXyTzNDaWpMqyxhb0d6sGhV6xMDKueuBXlLL30gz+DIRY6MpdgnHWlCh5wmq9w==",
+      "sha512": "McDvANp5N0qAnlbXX6daITSEoag2COax6oupEGmkixqoW/AmwUtPSErUERWG/Qa+zvaaSLJ6JE7fEGorzbzDmg==",
       "type": "package",
       "path": "system.net.nameresolution/4.3.0",
       "files": [
@@ -3953,7 +4095,7 @@
       ]
     },
     "System.Net.Security/4.3.0": {
-      "sha512": "IgJKNfALqw7JRWp5LMQ5SWHNKvXVz094U6wNE3c1i8bOkMQvgBL+MMQuNt3xl9Qg9iWpj3lFxPZEY6XHmROjMQ==",
+      "sha512": "Umk8DYRCIsGW2C4dkQA3Nbk4LSlkjzD5QjQarjNeeF6hsu+zdsPRyQtAm4N3L/WfzC4b12rhGDbv/CDWqkylNw==",
       "type": "package",
       "path": "system.net.security/4.3.0",
       "files": [
@@ -4296,7 +4438,7 @@
       ]
     },
     "System.Reflection.Emit/4.3.0": {
-      "sha512": "228FG0jLcIwTVJyz8CLFKueVqQK36ANazUManGaJHkO0icjiIypKW7YLWLIWahyIkdh5M7mV2dJepllLyA1SKg==",
+      "sha512": "XGsAkVVaYVTVuvRnWFuZWzJbcNYfoBvWKL61yN72aJSDTDaUcB+i+7lCBjVVS7Bhriu40/Fsg/NiM1atrfsLeg==",
       "type": "package",
       "path": "system.reflection.emit/4.3.0",
       "files": [
@@ -4330,7 +4472,7 @@
       ]
     },
     "System.Reflection.Emit.ILGeneration/4.3.0": {
-      "sha512": "59tBslAk9733NXLrUJrwNZEzbMAcu8k344OYo+wfSVygcgZ9lgBdGIzH/nrg3LYhXceynyvTc8t5/GD4Ri0/ng==",
+      "sha512": "50fBFXg10iAyY2Mh8CkS6ODCKUc5LSL26joAw+GPIGfOi3ZNQBhpOqJwoy/fDswK48xtUu1Jgr8TXDGQNJq1bw==",
       "type": "package",
       "path": "system.reflection.emit.ilgeneration/4.3.0",
       "files": [
@@ -4373,7 +4515,7 @@
       ]
     },
     "System.Reflection.Emit.Lightweight/4.3.0": {
-      "sha512": "oadVHGSMsTmZsAF864QYN1t1QzZjIcuKU3l2S9cZOwDdDueNTrqq1yRj7koFfIGEnKpt6NjpL3rOzRhs4ryOgA==",
+      "sha512": "6vhmXDOkqXIbaBm+aUgU4UZykdZtQ5QR/On5n/Rmol0Vu/gRH5ZI01YoyHZMiru0m2Nq+h86D7C3rBrtekf1xA==",
       "type": "package",
       "path": "system.reflection.emit.lightweight/4.3.0",
       "files": [
@@ -4528,7 +4670,7 @@
       ]
     },
     "System.Reflection.TypeExtensions/4.3.0": {
-      "sha512": "7u6ulLcZbyxB5Gq0nMkQttcdBTx57ibzw+4IOXEfR+sXYQoHvjW5LTLyNr8O22UIMrqYbchJQJnos4eooYzYJA==",
+      "sha512": "8A/9XULyswGcFZUzhpzs3IwEyquiUlD4xxuv48S6jNPGExxTGmOwFPe4UrO6wNaKvD3tJp9/3e2nUahXacnmWA==",
       "type": "package",
       "path": "system.reflection.typeextensions/4.3.0",
       "files": [
@@ -5019,7 +5161,7 @@
       ]
     },
     "System.Runtime.Serialization.Primitives/4.3.0": {
-      "sha512": "Wz+0KOukJGAlXjtKr+5Xpuxf8+c8739RI1C+A2BoQZT+wMCCoMDDdO8/4IRHfaVINqL78GO8dW8G2lW/e45Mcw==",
+      "sha512": "YG2yXYnB2wKDY5hbwZlJqIpmcaEXj1Ax3b6eYZ63IPMbZWa7cvtJ0/Y+Owi1rFmthEwdh+1weGUelFePrXD25A==",
       "type": "package",
       "path": "system.runtime.serialization.primitives/4.3.0",
       "files": [
@@ -5090,7 +5232,7 @@
       ]
     },
     "System.Security.Claims/4.3.0": {
-      "sha512": "P/+BR/2lnc4PNDHt/TPBAWHVMLMRHsyYZbU1NphW4HIWzCggz8mJbTQQ3MKljFE7LS3WagmVFuBgoLcFzYXlkA==",
+      "sha512": "j2Kbnu7Da5AFMFXnh4GrAuiTybAoKE89awsZc3dnVouzlRoz66FIl/UPJLeboS8h87UEoVURVFwM5pZIcJ4Ihg==",
       "type": "package",
       "path": "system.security.claims/4.3.0",
       "files": [
@@ -5167,7 +5309,7 @@
       ]
     },
     "System.Security.Cryptography.Cng/4.3.0": {
-      "sha512": "03idZOqFlsKRL4W+LuCpJ6dBYDUWReug6lZjBa3uJWnk5sPCUXckocevTaUA8iT/MFSrY/2HXkOt753xQ/cf8g==",
+      "sha512": "wJZzeZCFjOrqNsDZEIz+ZfHcaiZC3ktYUTjdyj9wdKPf8Kk+yWyFd5mw8A36OSGNSmkeSE64xr7cobulzi1dww==",
       "type": "package",
       "path": "system.security.cryptography.cng/4.3.0",
       "files": [
@@ -5193,7 +5335,7 @@
       ]
     },
     "System.Security.Cryptography.Csp/4.3.0": {
-      "sha512": "X4s/FCkEUnRGnwR3aSfVIkldBmtURMhmexALNTwpjklzxWU7yjMk7GHLKOZTNkgnWnE0q7+BCf9N2LVRWxewaA==",
+      "sha512": "tbsUt3nGVEH7sGauSyBaXRY+3j4Y6SUB2OcFl+4vlj7tR3Osd7aIfUiaCsQXFaXY2dw2zny+Zcy8Bf9spiWd0A==",
       "type": "package",
       "path": "system.security.cryptography.csp/4.3.0",
       "files": [
@@ -5263,7 +5405,7 @@
       ]
     },
     "System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "h4CEgOgv5PKVF/HwaHzJRiVboL2THYCou97zpmhjghx5frc7fIvlkY1jL+lnIQyChrJDMNEXS6r7byGif8Cy4w==",
+      "sha512": "pnSETpPDDB8kA6KQzFiCMJL9b14SIIOQ+DI3jde1Oceukff6OurBtQ3vwonZFN0ZJtWXjnuM2l6KgL0ftwk8Fg==",
       "type": "package",
       "path": "system.security.cryptography.openssl/4.3.0",
       "files": [
@@ -5360,7 +5502,7 @@
       ]
     },
     "System.Security.Principal/4.3.0": {
-      "sha512": "I1tkfQlAoMM2URscUtpcRo/hX0jinXx6a/KUtEQoz3owaYwl3qwsO8cbzYVVnjxrzxjHo3nJC+62uolgeGIS9A==",
+      "sha512": "hx8y2XsxcLMb7B2U169YVcxWIs5UmkoBbZmr5D7h0/tQkQMuyExxcCkeXG4uGvx+/LvDPgqqFWpFA9IT51nyLg==",
       "type": "package",
       "path": "system.security.principal/4.3.0",
       "files": [
@@ -5417,7 +5559,7 @@
       ]
     },
     "System.Security.Principal.Windows/4.3.0": {
-      "sha512": "HVL1rvqYtnRCxFsYag/2le/ZfKLK4yMw79+s6FmKXbSCNN0JeAhrYxnRAHFoWRa0dEojsDcbBSpH3l22QxAVyw==",
+      "sha512": "hobYMk5boVNn/rKBFJ3SjRZ2OLrUfpk5hcAEfKHhmEvX/eTXrLWfO/7VOxoQJz/D/kbTVQcIzH5ZLfgsp9v0yA==",
       "type": "package",
       "path": "system.security.principal.windows/4.3.0",
       "files": [
@@ -5798,7 +5940,7 @@
       ]
     },
     "System.Threading.Tasks.Extensions/4.3.0": {
-      "sha512": "npvJkVKl5rKXrtl1Kkm6OhOUaYGEiF9wFbppFRWSMoApKzt2PiPHT2Bb8a5sAWxprvdOAtvaARS9QYMznEUtug==",
+      "sha512": "rO6KRR7iUr6y/nuQl/MAVo2ZLG5l0BxFBDRl5u7w6YnOklCsa2iLj8vGkKiFAuZd7xCLRWNKdhAF2d16l88sCQ==",
       "type": "package",
       "path": "system.threading.tasks.extensions/4.3.0",
       "files": [
@@ -5813,7 +5955,7 @@
       ]
     },
     "System.Threading.ThreadPool/4.3.0": {
-      "sha512": "k/+g4b7vjdd4aix83sTgC9VG6oXYKAktSfNIJUNGxPEj7ryEOfzHHhfnmsZvjxawwcD9HyWXKCXmPjX8U4zeSw==",
+      "sha512": "Zkynk6m9lzKbj+XKci/XNsaLxyYJe60kfeVDCsBwbVYQQLul/UnTfnT3M1DrziwvKJaR7v1wStH7JGUKF7B7pg==",
       "type": "package",
       "path": "system.threading.threadpool/4.3.0",
       "files": [
@@ -6016,11 +6158,15 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "Discord.Addons.EmbedTool >= 1.0.0",
+      "Discord.Addons.Interactive >= 1.0.1",
       "Discord.Net >= 1.0.2",
       "Discord.Net.Commands >= 1.0.2",
       "Discord.Net.Core >= 1.0.2",
-      "Discord.Net.Providers.WS4Net >= 1.0.2",
       "Discord.Net.WebSocket >= 1.0.2",
+      "Google.Apis >= 1.36.1",
+      "Google.Apis.Auth >= 1.36.1",
+      "Google.Apis.Core >= 1.36.1",
+      "Google.Apis.YouTube.v3 >= 1.36.1.1226",
       "Microsoft.NETCore.App >= 2.1.0"
     ]
   },
@@ -6069,6 +6215,10 @@
             "target": "Package",
             "version": "[1.0.0, )"
           },
+          "Discord.Addons.Interactive": {
+            "target": "Package",
+            "version": "[1.0.1, )"
+          },
           "Discord.Net": {
             "target": "Package",
             "version": "[1.0.2, )"
@@ -6081,13 +6231,25 @@
             "target": "Package",
             "version": "[1.0.2, )"
           },
-          "Discord.Net.Providers.WS4Net": {
-            "target": "Package",
-            "version": "[1.0.2, )"
-          },
           "Discord.Net.WebSocket": {
             "target": "Package",
             "version": "[1.0.2, )"
+          },
+          "Google.Apis": {
+            "target": "Package",
+            "version": "[1.36.1, )"
+          },
+          "Google.Apis.Auth": {
+            "target": "Package",
+            "version": "[1.36.1, )"
+          },
+          "Google.Apis.Core": {
+            "target": "Package",
+            "version": "[1.36.1, )"
+          },
+          "Google.Apis.YouTube.v3": {
+            "target": "Package",
+            "version": "[1.36.1.1226, )"
           },
           "Microsoft.NETCore.App": {
             "target": "Package",
@@ -6102,17 +6264,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "프로젝트 대상 프레임워크 '.NETCoreApp,Version=v2.1' 대신 '.NETFramework,Version=v4.6.1'을(를) 사용하여 패키지 'Discord.Net.Providers.WS4Net 1.0.2'을(를) 복원했습니다. 이 패키지는 프로젝트와 완벽하게 호환되지 않을 수 있습니다.",
-      "libraryId": "Discord.Net.Providers.WS4Net",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.1"
-      ]
-    }
-  ]
+  }
 }
