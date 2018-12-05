@@ -1,0 +1,1 @@
+gource -s 0.01 --auto-skip-seconds 0.1 --file-idle-time 500 --disable-progress --output-framerate 25 --highlight-all-users -800x600 --stop-at-end --output-ppm-stream - | 
