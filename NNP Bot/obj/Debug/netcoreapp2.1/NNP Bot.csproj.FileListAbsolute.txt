@@ -1,0 +1,11 @@
+E:\VS Project\NNPBot Project\NNP Bot\NNP Bot\bin\Debug\netcoreapp2.1\NNP Bot.deps.json
+E:\VS Project\NNPBot Project\NNP Bot\NNP Bot\bin\Debug\netcoreapp2.1\NNP Bot.runtimeconfig.json
+E:\VS Project\NNPBot Project\NNP Bot\NNP Bot\bin\Debug\netcoreapp2.1\NNP Bot.runtimeconfig.dev.json
+E:\VS Project\NNPBot Project\NNP Bot\NNP Bot\bin\Debug\netcoreapp2.1\NNP Bot.dll
+E:\VS Project\NNPBot Project\NNP Bot\NNP Bot\obj\Debug\netcoreapp2.1\NNP Bot.csprojAssemblyReference.cache
+E:\VS Project\NNPBot Project\NNP Bot\NNP Bot\obj\Debug\netcoreapp2.1\NNP Bot.csproj.CoreCompileInputs.cache
+E:\VS Project\NNPBot Project\NNP Bot\NNP Bot\obj\Debug\netcoreapp2.1\NNP Bot.AssemblyInfoInputs.cache
+E:\VS Project\NNPBot Project\NNP Bot\NNP Bot\obj\Debug\netcoreapp2.1\NNP Bot.AssemblyInfo.cs
+E:\VS Project\NNPBot Project\NNP Bot\NNP Bot\bin\Debug\netcoreapp2.1\NNP Bot.pdb
+E:\VS Project\NNPBot Project\NNP Bot\NNP Bot\obj\Debug\netcoreapp2.1\NNP Bot.dll
+E:\VS Project\NNPBot Project\NNP Bot\NNP Bot\obj\Debug\netcoreapp2.1\NNP Bot.pdb
