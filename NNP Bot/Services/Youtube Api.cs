@@ -12,7 +12,7 @@ using SearchResult = Google.Apis.YouTube.v3.Data.SearchResult;
 
 namespace NNP_Bot.Services
 {
-    class Youtube_Api
+    internal class Youtube_Api
     {
         private string ytApiKey = "AIzaSyCBXGF_M-o0HYYPYTh8LZWCPGAZfp97j4o";
         public async Task GetYtResults(SocketCommandContext context, string query)

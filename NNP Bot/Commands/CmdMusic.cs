@@ -2,6 +2,7 @@
 using Discord.Audio;
 using Discord.Commands;
 using Discord.WebSocket;
+using NNP_Bot.Module;
 using NNP_Bot.Services;
 using System;
 using System.Collections.Generic;
@@ -30,12 +31,18 @@ namespace NNP_Bot.Commands
         [Command("음악")]
         public async Task MusicAsync()
         {
-            if ((Context.User as IVoiceState).VoiceChannel == null)
+            /*if ((Context.User as IVoiceState).VoiceChannel == null)
             {
                 await _service.JoinAudio(Context.Guild, (Context.User as IVoiceState).VoiceChannel);
-            }
-            await _service.SendAudioAsync(Context.Guild,Context.Message.Channel,"aa");
-            await ReplyAsync($"판사님!!!! 비트주세요!!!!!!!!!!");
+            }*/
+           /* List<string> r = Youtube_Api.GetTitle(url);
+            r[0] = r[0].Replace("\\", "_").Replace("/", "_").Replace(" /", "_").Replace(":", "_").Replace("*", "_").Replace("?", "_").Replace("<", "_").Replace(">", "_").Replace("|","_");
+            await ReplyAsync($"{r[0]}");
+            if (System.IO.File.Exists(@"D:\Music\" + r[0] + "-" + r[1]) == false)
+                DownLoadModule.DownloadMusic(r, r[0] + "-" + r[1]); */
+            await _service.SendAudioAsync(Context.Guild, Context.Channel, @"D:\Music\aaa.mp3");
+            await ReplyAsync("니가해 씨발");
+
         }
         [Command("스킵")]
         public async Task SkipAsync()

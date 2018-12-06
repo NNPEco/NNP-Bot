@@ -22,6 +22,7 @@ namespace NNP_Bot.Core
                 .AddSingleton(_client)
                 .AddSingleton(_commands)
                 .AddSingleton<AudioService>()
+                .AddSingleton<Youtube_Api>()
                 .BuildServiceProvider();
             
             string bottoken = "NTE4NzM4Mzg3NDA2OTQ2MzE5.DuVIdw.n9mfH1UU0C3-NtO_wi-G_zd__b4";

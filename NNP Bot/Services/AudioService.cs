@@ -45,9 +45,10 @@ namespace NNP_Bot.Services
 
         public async Task SendAudioAsync(IGuild guild, IMessageChannel channel, string path)
         {
+            await channel.SendMessageAsync($"뀨뀨");
             if (!File.Exists(path))
             {
-                await channel.SendMessageAsync("File does not exist.");
+                await channel.SendMessageAsync($"{path} File does not exist.");
                 return;
             }
             IAudioClient client;
