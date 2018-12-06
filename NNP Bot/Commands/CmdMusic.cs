@@ -27,6 +27,19 @@ namespace NNP_Bot.Commands
         {
             _service = service;
         }
+        [Command("join", RunMode = RunMode.Async)]
+        public async Task JoinChannel(IVoiceChannel channel = null)
+        {
+            // Get the audio channel
+            channel = channel ?? (Context.User as IGuildUser)?.VoiceChannel;
+            if (channel == null) { await Context.Channel.SendMessageAsync("User must be in a voice channel, or a voice channel must be passed as an argument."); return; }
+
+            // For the next step with transmitting audio, you would want to pass this Audio Client in to a service.
+            var audioClient = await channel.ConnectAsync();
+        }
+
+
+
 
         [Command("음악")]
         public async Task MusicAsync()
@@ -35,13 +48,15 @@ namespace NNP_Bot.Commands
             {
                 await _service.JoinAudio(Context.Guild, (Context.User as IVoiceState).VoiceChannel);
             }*/
-           /* List<string> r = Youtube_Api.GetTitle(url);
-            r[0] = r[0].Replace("\\", "_").Replace("/", "_").Replace(" /", "_").Replace(":", "_").Replace("*", "_").Replace("?", "_").Replace("<", "_").Replace(">", "_").Replace("|","_");
-            await ReplyAsync($"{r[0]}");
-            if (System.IO.File.Exists(@"D:\Music\" + r[0] + "-" + r[1]) == false)
-                DownLoadModule.DownloadMusic(r, r[0] + "-" + r[1]); */
-            await _service.SendAudioAsync(Context.Guild, Context.Channel, @"D:\Music\aaa.mp3");
-            await ReplyAsync("니가해 씨발");
+            /* List<string> r = Youtube_Api.GetTitle(url);
+             r[0] = r[0].Replace("\\", "_").Replace("/", "_").Replace(" /", "_").Replace(":", "_").Replace("*", "_").Replace("?", "_").Replace("<", "_").Replace(">", "_").Replace("|","_");
+             await ReplyAsync($"{r[0]}");
+             if (System.IO.File.Exists(@"D:\Music\" + r[0] + "-" + r[1]) == false)
+                 DownLoadModule.DownloadMusic(r, r[0] + "-" + r[1]); */
+            //await _service.SendAudioAsync(Context.Guild, Context.Channel, @"D:\Music\aaa.mp3");
+            // await ReplyAsync("니가해 씨발");
+            IUserGuild author = (IUserGuild)Context.Message.Author;
+          //  IVoiceChannel voice_channel = author.;
 
         }
         [Command("스킵")]

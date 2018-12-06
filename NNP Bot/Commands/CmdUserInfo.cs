@@ -10,6 +10,7 @@ namespace NNP_Bot.Commands
 {
     public class CmdUserInfo : ModuleBase<SocketCommandContext>
     {
+
         [Command("저새끼정보")]
         public async Task userinfo([Remainder] SocketGuildUser user)
         {

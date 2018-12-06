@@ -11,13 +11,22 @@ namespace NNP_Bot.Core
 {
     public class StartupBot
     {
-        private DiscordSocketClient _client;
-        private CommandService _commands;
-        private IServiceProvider _services;
+        public DiscordSocketClient _client;
+        public CommandService _commands;
+        public IServiceProvider _services;
         public async Task RunBotAsync()
         {
-            _client = new DiscordSocketClient();
-            _commands = new CommandService();
+            _client = new DiscordSocketClient(
+                new DiscordSocketConfig{
+                    LogLevel = LogSeverity.Verbose
+                }
+            );
+            _commands = new CommandService(
+                new CommandServiceConfig {
+                    LogLevel = LogSeverity.Verbose,
+                    DefaultRunMode = RunMode.Async,
+            } 
+            );
             _services = new ServiceCollection()
                 .AddSingleton(_client)
                 .AddSingleton(_commands)
@@ -35,24 +44,24 @@ namespace NNP_Bot.Core
 
             await _client.StartAsync();
 
-            await Task.Delay(-1);
+           await Task.Delay(-1);
         }
 
-        private Task Log(LogMessage arg)
+        public Task Log(LogMessage arg)
         {
             Console.WriteLine(arg);
 
             return Task.CompletedTask;
         }
 
-        private async Task RegisterCommandsAsync()
+        public async Task RegisterCommandsAsync()
         {
             _client.MessageReceived += HandlecommandAsync;
 
             await _commands.AddModulesAsync(Assembly.GetEntryAssembly());
         }
 
-        private async Task HandlecommandAsync(SocketMessage arg)
+        public async Task HandlecommandAsync(SocketMessage arg)
         {
             var message = arg as SocketUserMessage;
             if (message is null || message.Author.IsBot) return;
@@ -65,7 +74,10 @@ namespace NNP_Bot.Core
                 var result = await _commands.ExecuteAsync(context, argPos, _services);
 
                 if (!result.IsSuccess)
+                {
                     Console.WriteLine(result.ErrorReason);
+                    Console.WriteLine("TTTTTTTTTTT");
+                }
             }
         }
     }
