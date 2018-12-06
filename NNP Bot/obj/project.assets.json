@@ -139,6 +139,15 @@
           "lib/netstandard2.0/DSharpPlus.dll": {}
         }
       },
+      "EmergenceGuardian.FFmpeg/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/FFmpeg.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FFmpeg.dll": {}
+        }
+      },
       "Google.Apis/1.36.1": {
         "type": "package",
         "dependencies": {
@@ -2024,6 +2033,16 @@
         "lib/netstandard1.3/DSharpPlus.xml",
         "lib/netstandard2.0/DSharpPlus.dll",
         "lib/netstandard2.0/DSharpPlus.xml"
+      ]
+    },
+    "EmergenceGuardian.FFmpeg/1.1.2": {
+      "sha512": "5yg8f2Q838DsXs1d8dFGSP8T/wvMegzMLsCtw61UZPBFoON3U+AF/M1xAuum7Of3k1hVwVnf/x1bSPEX3fYbpw==",
+      "type": "package",
+      "path": "emergenceguardian.ffmpeg/1.1.2",
+      "files": [
+        "emergenceguardian.ffmpeg.1.1.2.nupkg.sha512",
+        "emergenceguardian.ffmpeg.nuspec",
+        "lib/netstandard2.0/FFmpeg.dll"
       ]
     },
     "Google.Apis/1.36.1": {
@@ -6272,6 +6291,7 @@
       "Discord.Net.Core >= 1.0.2",
       "Discord.Net.Providers.WS4Net >= 1.0.2",
       "Discord.Net.WebSocket >= 1.0.2",
+      "EmergenceGuardian.FFmpeg >= 1.1.2",
       "Google.Apis >= 1.36.1",
       "Google.Apis.Auth >= 1.36.1",
       "Google.Apis.Core >= 1.36.1",
@@ -6347,6 +6367,10 @@
           "Discord.Net.WebSocket": {
             "target": "Package",
             "version": "[1.0.2, )"
+          },
+          "EmergenceGuardian.FFmpeg": {
+            "target": "Package",
+            "version": "[1.1.2, )"
           },
           "Google.Apis": {
             "target": "Package",

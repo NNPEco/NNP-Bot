@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "78bb2b6358390884613a85bc21f547b2095907c7"
+    "signature": "86822940f101bd3cb06cb87dd6a3dce7943e53a2"
   },
   "compilationOptions": {},
   "targets": {
@@ -15,6 +15,7 @@
           "Discord.Net.Core": "1.0.2",
           "Discord.Net.Providers.WS4Net": "1.0.2",
           "Discord.Net.WebSocket": "1.0.2",
+          "EmergenceGuardian.FFmpeg": "1.1.2",
           "Google.Apis": "1.36.1",
           "Google.Apis.Auth": "1.36.1",
           "Google.Apis.Core": "1.36.1",
@@ -141,6 +142,14 @@
           "lib/netstandard2.0/DSharpPlus.dll": {
             "assemblyVersion": "3.2.3.0",
             "fileVersion": "3.2.3.0"
+          }
+        }
+      },
+      "EmergenceGuardian.FFmpeg/1.1.2": {
+        "runtime": {
+          "lib/netstandard2.0/FFmpeg.dll": {
+            "assemblyVersion": "1.1.2.0",
+            "fileVersion": "1.1.2.0"
           }
         }
       },
@@ -1256,6 +1265,13 @@
       "sha512": "sha512-2ZGtVfKqN+HOEdO/d6dSth9ptzoZ/WHDQlA67/TTZCksa8Rvqip86T7BSrPg4+xrWEdY2cXiZmP4xF+LiGKsrw==",
       "path": "dsharpplus/3.2.3",
       "hashPath": "dsharpplus.3.2.3.nupkg.sha512"
+    },
+    "EmergenceGuardian.FFmpeg/1.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5yg8f2Q838DsXs1d8dFGSP8T/wvMegzMLsCtw61UZPBFoON3U+AF/M1xAuum7Of3k1hVwVnf/x1bSPEX3fYbpw==",
+      "path": "emergenceguardian.ffmpeg/1.1.2",
+      "hashPath": "emergenceguardian.ffmpeg.1.1.2.nupkg.sha512"
     },
     "Google.Apis/1.36.1": {
       "type": "package",

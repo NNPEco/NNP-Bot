@@ -14,7 +14,7 @@ namespace NNP_Bot.Module
             Process youtubedl = new Process();
             ProcessStartInfo youtubedlinfo = new ProcessStartInfo()
             {
-                FileName = "youtube-dl",
+                FileName = "youtube-dl.exe",
                 Arguments = url[1] + @" --extract-audio --audio-format mp3 -o D:\Music\"+ filename + ".%(ext)s",
                 CreateNoWindow = true,
                 RedirectStandardOutput = true,

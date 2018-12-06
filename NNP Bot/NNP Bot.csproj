@@ -14,10 +14,20 @@
     <PackageReference Include="Discord.Net.Providers.WS4Net" Version="1.0.2" />
     <PackageReference Include="Discord.Net.WebSocket" Version="1.0.2" />
     <PackageReference Include="DSharpPlus" Version="3.2.3" />
+    <PackageReference Include="EmergenceGuardian.FFmpeg" Version="1.1.2" />
     <PackageReference Include="Google.Apis" Version="1.36.1" />
     <PackageReference Include="Google.Apis.Auth" Version="1.36.1" />
     <PackageReference Include="Google.Apis.Core" Version="1.36.1" />
     <PackageReference Include="Google.Apis.YouTube.v3" Version="1.36.1.1226" />
   </ItemGroup>
-
+  <ItemGroup>
+    <None Update="ffmpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+    <ItemGroup>
+    <None Update="youtube-dl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

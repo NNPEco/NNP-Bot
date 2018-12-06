@@ -6,57 +6,36 @@ using NNP_Bot.Module;
 using NNP_Bot.Services;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
+using EmergenceGuardian.FFmpeg;
 using System.Threading.Tasks;
 
 namespace NNP_Bot.Commands
 {
     public class CmdMusic : ModuleBase<SocketCommandContext>
     {
-        public Dictionary<string, AudioService> slist = new Dictionary<string, AudioService>();
-        public struct MusicList
-        {
-            public string MusicName;
-            public string Path;
-            public SocketGuildUser adduser;
-        };
-
         private readonly AudioService _service;
 
         public CmdMusic(AudioService service)
         {
             _service = service;
         }
-        [Command("join", RunMode = RunMode.Async)]
-        public async Task JoinChannel(IVoiceChannel channel = null)
+        [Command("play", RunMode = RunMode.Async)]
+        public async Task play(string url)
         {
-            // Get the audio channel
-            channel = channel ?? (Context.User as IGuildUser)?.VoiceChannel;
-            if (channel == null) { await Context.Channel.SendMessageAsync("User must be in a voice channel, or a voice channel must be passed as an argument."); return; }
+            IVoiceChannel channel = (Context.User as IVoiceState).VoiceChannel;
+            await _service.JoinAudio(Context.Guild, channel);
 
-            // For the next step with transmitting audio, you would want to pass this Audio Client in to a service.
-            var audioClient = await channel.ConnectAsync();
+            await _service.SendAudioAsync(Context.Guild, Context.Message.Channel, url);
         }
-
-
-
-
         [Command("음악")]
-        public async Task MusicAsync()
+        public async Task MusicAsync(string url)
         {
-            /*if ((Context.User as IVoiceState).VoiceChannel == null)
-            {
-                await _service.JoinAudio(Context.Guild, (Context.User as IVoiceState).VoiceChannel);
-            }*/
-            /* List<string> r = Youtube_Api.GetTitle(url);
-             r[0] = r[0].Replace("\\", "_").Replace("/", "_").Replace(" /", "_").Replace(":", "_").Replace("*", "_").Replace("?", "_").Replace("<", "_").Replace(">", "_").Replace("|","_");
-             await ReplyAsync($"{r[0]}");
-             if (System.IO.File.Exists(@"D:\Music\" + r[0] + "-" + r[1]) == false)
-                 DownLoadModule.DownloadMusic(r, r[0] + "-" + r[1]); */
-            //await _service.SendAudioAsync(Context.Guild, Context.Channel, @"D:\Music\aaa.mp3");
-            // await ReplyAsync("니가해 씨발");
-            IUserGuild author = (IUserGuild)Context.Message.Author;
-          //  IVoiceChannel voice_channel = author.;
+            IVoiceChannel channel = (Context.User as IVoiceState).VoiceChannel;
+            await _service.JoinAudio(Context.Guild, channel);
+            await _service.SendAudioAsync(Context.Guild, Context.Channel, url);
+            await ReplyAsync("니가해 씨발");
 
         }
         [Command("스킵")]

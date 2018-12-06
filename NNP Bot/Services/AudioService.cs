@@ -29,7 +29,7 @@ namespace NNP_Bot.Services
 
             if (ConnectedChannels.TryAdd(guild.Id, audioClient))
             {
-                
+
             }
         }
 
@@ -39,18 +39,13 @@ namespace NNP_Bot.Services
             if (ConnectedChannels.TryRemove(guild.Id, out client))
             {
                 await client.StopAsync();
-                
+
             }
         }
 
         public async Task SendAudioAsync(IGuild guild, IMessageChannel channel, string path)
         {
             await channel.SendMessageAsync($"뀨뀨");
-            if (!File.Exists(path))
-            {
-                await channel.SendMessageAsync($"{path} File does not exist.");
-                return;
-            }
             IAudioClient client;
             if (ConnectedChannels.TryGetValue(guild.Id, out client))
             {
@@ -62,15 +57,35 @@ namespace NNP_Bot.Services
                 }
             }
         }
-
+        private Process CreateStream(string url)
+        {
+            Process currentsong = new Process();
+            try
+            {
+                currentsong.StartInfo = new ProcessStartInfo
+                {
+                    FileName = "youtube-dl.exe",
+                    Arguments = $"--extract-audio --audio-format mp3 -o - {url} | ffmpeg -i pipe:0 -ac 2 -f s16le -ar 48000 pipe:1",
+                    CreateNoWindow = true,
+                    RedirectStandardOutput = true,
+                    UseShellExecute = false
+                };
+            }
+            catch
+            {
+            }
+            currentsong.Start();
+            return currentsong;
+        }
         private Process CreateProcess(string path)
         {
             return Process.Start(new ProcessStartInfo
             {
-                FileName = "ffmpeg.exe",
-                Arguments = $"-hide_banner -loglevel panic -i \"{path}\" -ac 2 -f s16le -ar 48000 pipe:1",
-                UseShellExecute = false,
-                RedirectStandardOutput = true
+                FileName = "youtube-dl.exe",
+                Arguments = $"--extract-audio --audio-format mp3 -o - {path} | ffmpeg -i pipe:0 -ac 2 -f s16le -ar 48000 pipe:1",
+                CreateNoWindow = true,
+                RedirectStandardOutput = true,
+                UseShellExecute = false
             });
         }
     }
